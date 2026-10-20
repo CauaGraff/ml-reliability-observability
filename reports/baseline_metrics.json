@@ -1,0 +1,49 @@
+{
+  "roc_auc": 0.6123731073014552,
+  "classification_report": {
+    "0": {
+      "precision": 0.9424414658975229,
+      "recall": 0.5616247914665589,
+      "f1-score": 0.7038233710285406,
+      "support": 39562.0
+    },
+    "1": {
+      "precision": 0.10951940850277264,
+      "recall": 0.6111747851002866,
+      "f1-score": 0.18575285204214925,
+      "support": 3490.0
+    },
+    "accuracy": 0.5656415497537861,
+    "macro avg": {
+      "precision": 0.5259804372001478,
+      "recall": 0.5863997882834227,
+      "f1-score": 0.4447881115353449,
+      "support": 43052.0
+    },
+    "weighted avg": {
+      "precision": 0.8749208401354751,
+      "recall": 0.5656415497537861,
+      "f1-score": 0.66182610931567,
+      "support": 43052.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      22219,
+      17343
+    ],
+    [
+      1357,
+      2133
+    ]
+  ],
+  "train_rows": 172205,
+  "test_rows": 43052,
+  "features": [
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AGE_YEARS",
+    "EMPLOYED_YEARS"
+  ]
+}
