@@ -1,0 +1,22 @@
+{
+  "run_id": "452c9f7d1cb84f10b05121154fd5f958",
+  "timestamp_utc": "2026-10-24T17:02:36.201709+00:00",
+  "alerts": [
+    {
+      "level": "WARNING",
+      "type": "DATA_DRIFT",
+      "feature": "AMT_INCOME_TOTAL",
+      "message": "Mudança estatística detectada em AMT_INCOME_TOTAL",
+      "ks_statistic": 0.33199999999999996,
+      "p_value": 2.3706410154683246e-244
+    },
+    {
+      "level": "WARNING",
+      "type": "DATA_DRIFT",
+      "feature": "AMT_CREDIT",
+      "message": "Mudança estatística detectada em AMT_CREDIT",
+      "ks_statistic": 0.23600000000000004,
+      "p_value": 1.6699144230972504e-122
+    }
+  ]
+}
