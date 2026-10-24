@@ -3419,4 +3419,4 @@ drift = ["evidently"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<3.13"
-content-hash = "43a4d0acf522bab9155a38b5ef5f274f601b17c09d7c25b83231a7bafd3eabd5"
+content-hash = "ddef3e0d700ec033e75bc9124614ff84f03205995a244a7cefc55069c899467b"

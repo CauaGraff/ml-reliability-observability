@@ -1,0 +1,29 @@
+{
+  "scenario": "drift sintético: renda +35% e crédito +50%",
+  "reference_rows": 5000,
+  "production_rows": 5000,
+  "ks_alpha": 0.05,
+  "features": {
+    "AMT_INCOME_TOTAL": {
+      "ks_statistic": 0.33199999999999996,
+      "p_value": 2.3706410154683246e-244,
+      "drift_detected": true,
+      "reference_count": 5000,
+      "production_count": 5000,
+      "reference_median": 144000.0,
+      "production_median": 206550.0
+    },
+    "AMT_CREDIT": {
+      "ks_statistic": 0.23600000000000004,
+      "p_value": 1.6699144230972504e-122,
+      "drift_detected": true,
+      "reference_count": 5000,
+      "production_count": 5000,
+      "reference_median": 512446.5,
+      "production_median": 781920.0
+    }
+  },
+  "predicted_positive_rate": 0.3432,
+  "mean_predicted_risk": 0.45504568776365234,
+  "note": "Drift sintético não demonstra degradação real do modelo nem concept drift."
+}
