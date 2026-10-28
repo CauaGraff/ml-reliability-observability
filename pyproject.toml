@@ -1,10 +1,10 @@
 [project]
 name = "ml-reliability-observability"
-version = "0.2.0"
-description = "FIAP MLET - Fase 4: validacao, data drift, observabilidade e governanca"
-requires-python = ">=3.12,<3.13"
-authors = [{ name = "Equipe FIAP" }]
+version = "0.1.0"
+description = "FIAP MLET Fase 4"
+authors = [{name = "Cauã Graff"}]
 readme = "README.md"
+requires-python = ">=3.12,<3.13"
 dependencies = [
     "pandas>=2.2,<3",
     "numpy>=1.26,<3",

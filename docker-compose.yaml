@@ -1,0 +1,75 @@
+services:
+  monitor-api:
+    build: .
+    image: fiap-credit-monitor:local
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    environment:
+      MONITORING_ROOT: /app/monitoring
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./monitoring:/app/monitoring:ro
+    restart: unless-stopped
+
+  mlflow:
+    build: .
+    image: fiap-credit-monitor:local
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:////app/monitoring/mlflow.db
+      --default-artifact-root /app/monitoring/artifacts
+      --host 0.0.0.0
+      --port 5000
+    ports:
+      - "127.0.0.1:5000:5000"
+    volumes:
+      - ./monitoring:/app/monitoring
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+    ports:
+      - "127.0.0.1:9090:9090"
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    depends_on:
+      - monitor-api
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin}
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  pipeline:
+    profiles: ["jobs"]
+    build: .
+    image: fiap-credit-monitor:local
+    command: python -m scripts.run_all --mlflow
+    environment:
+      MLFLOW_TRACKING_URI: sqlite:////app/monitoring/mlflow.db
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./reports:/app/reports
+      - ./monitoring:/app/monitoring
+    depends_on:
+      - mlflow
+
+volumes:
+  grafana_data:
+  prometheus_data:
