@@ -1,6 +1,7 @@
 import pandas as pd
 import pytest
 from pandera.errors import SchemaErrors
+
 from src.validation.contracts import validate_credit_data
 
 
@@ -20,7 +21,14 @@ def test_valid_passes():
     assert len(validate_credit_data(sample())) == 3
 
 
-@pytest.mark.parametrize("field,value", [("AMT_INCOME_TOTAL", -1), ("AMT_CREDIT", 0), ("DAYS_BIRTH", -100), ("TARGET", 3)])
+def test_inferencia_dispensa_target():
+    without_target = sample().drop(columns=["TARGET"])
+    assert len(validate_credit_data(without_target, require_target=False)) == 3
+
+
+@pytest.mark.parametrize("field,value", [
+    ("AMT_INCOME_TOTAL", -1), ("AMT_CREDIT", 0), ("DAYS_BIRTH", -100), ("TARGET", 3),
+])
 def test_invalid_blocked(field, value):
     df = sample()
     df.loc[0, field] = value
