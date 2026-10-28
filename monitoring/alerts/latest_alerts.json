@@ -1,22 +1,22 @@
 {
-  "run_id": "452c9f7d1cb84f10b05121154fd5f958",
-  "timestamp_utc": "2026-10-24T17:02:36.201709+00:00",
+  "run_id": "c11d818718a7486b9ff0fbbb9586092c",
+  "timestamp_utc": "2026-10-28T23:46:50.711200+00:00",
   "alerts": [
     {
       "level": "WARNING",
       "type": "DATA_DRIFT",
       "feature": "AMT_INCOME_TOTAL",
-      "message": "Mudança estatística detectada em AMT_INCOME_TOTAL",
-      "ks_statistic": 0.33199999999999996,
-      "p_value": 2.3706410154683246e-244
+      "message": "Diferenca estatistica detectada: AMT_INCOME_TOTAL",
+      "ks_statistic": 0.3328,
+      "p_value": 1.4945909741822618e-245
     },
     {
       "level": "WARNING",
       "type": "DATA_DRIFT",
       "feature": "AMT_CREDIT",
-      "message": "Mudança estatística detectada em AMT_CREDIT",
-      "ks_statistic": 0.23600000000000004,
-      "p_value": 1.6699144230972504e-122
+      "message": "Diferenca estatistica detectada: AMT_CREDIT",
+      "ks_statistic": 0.22600000000000003,
+      "p_value": 2.7435535421989136e-112
     }
   ]
 }

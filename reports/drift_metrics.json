@@ -1,29 +1,29 @@
 {
-  "scenario": "drift sintético: renda +35% e crédito +50%",
+  "scenario": "drift sintetico: renda +35% e credito +50%",
   "reference_rows": 5000,
   "production_rows": 5000,
   "ks_alpha": 0.05,
   "features": {
     "AMT_INCOME_TOTAL": {
-      "ks_statistic": 0.33199999999999996,
-      "p_value": 2.3706410154683246e-244,
+      "ks_statistic": 0.3328,
+      "p_value": 1.4945909741822618e-245,
       "drift_detected": true,
       "reference_count": 5000,
       "production_count": 5000,
-      "reference_median": 144000.0,
-      "production_median": 206550.0
+      "reference_median": 148500.0,
+      "production_median": 194400.0
     },
     "AMT_CREDIT": {
-      "ks_statistic": 0.23600000000000004,
-      "p_value": 1.6699144230972504e-122,
+      "ks_statistic": 0.22600000000000003,
+      "p_value": 2.7435535421989136e-112,
       "drift_detected": true,
       "reference_count": 5000,
       "production_count": 5000,
-      "reference_median": 512446.5,
-      "production_median": 781920.0
+      "reference_median": 509400.0,
+      "production_median": 777843.0
     }
   },
-  "predicted_positive_rate": 0.3432,
-  "mean_predicted_risk": 0.45504568776365234,
-  "note": "Drift sintético não demonstra degradação real do modelo nem concept drift."
+  "predicted_positive_rate": 0.3416,
+  "mean_predicted_risk": 0.4530240442368276,
+  "note": "Drift de dados simulado; nao comprova concept drift ou queda de performance real."
 }
