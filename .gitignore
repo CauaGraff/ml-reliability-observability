@@ -219,8 +219,27 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# MLflow
-monitoring/mlflow.db
-monitoring/mlflow.db-*
+# Segredos e dados derivados do experimento (nao versionar)
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+*.sqlite*
+data/raw/*.csv
+data/production/*.csv
+models/*.joblib
+models/*.pkl
+reports/*.json
+reports/*.html
+monitoring/logs/*
+monitoring/alerts/*
+monitoring/metrics/*
 monitoring/mlruns/
-mlruns/
+monitoring/artifacts/
+!**/.gitkeep
+
+# SO/IDE
+.DS_Store
+Thumbs.db
+.vscode/
