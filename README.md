@@ -350,7 +350,6 @@ Não gere commits artificiais retroativos; faça os commits por grupos reais de 
 | Drift em pelo menos 2 features (25%) | holdout, injeção, SciPy KS, Evidently | HTML + JSON + gráfico |
 | Observabilidade e saúde (20%) | logs, alertas, MLflow, API, Prometheus/Grafana | MLflow, dashboard, `latest_run.json` |
 | Governança/LGPD (15%) | seção 10 do README | plano de privacy by design, vieses e causalidade |
-| Vídeo STAR ≤5 min (15%) | `doc/ROTEIRO_VIDEO_STAR.md` | **[INSERIR LINK DO VÍDEO]** |
 
 **Pendências para publicar a entrega:** executar o pipeline completo com **seu dataset**, confirmar o build do Docker e o painel Grafana, revisar artefatos contra dados pessoais, adicionar capturas verdadeiras e o link do vídeo. O `poetry.lock` já está versionado; mantenha-o sincronizado se alterar `pyproject.toml`.
 
