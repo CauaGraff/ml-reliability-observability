@@ -2,8 +2,6 @@
 
 **Observabilidade contínua, detecção de Data Drift, qualidade de dados e governança em um modelo demonstrativo de risco de crédito.**
 
-> **Status:** implementação acadêmica das Etapas 1–4. O modelo não deve aprovar, negar ou precificar crédito real. Os artefatos de execução, as capturas do dashboard e o vídeo precisam ser produzidos/confirmados na máquina de entrega.
-
 ## 1. Problema e objetivo
 
 Uma fintech hipotética utiliza um classificador binário para prever dificuldade de pagamento (`TARGET` = 1). Mudanças no perfil de solicitações podem tornar os dados recebidos diferentes daqueles vistos durante o desenvolvimento. Nosso objetivo é **bloquear dados inválidos**, **detectar mudança de distribuição**, **acompanhar a saúde operacional do pipeline** e **documentar privacidade, vieses e resposta a incidentes**.
